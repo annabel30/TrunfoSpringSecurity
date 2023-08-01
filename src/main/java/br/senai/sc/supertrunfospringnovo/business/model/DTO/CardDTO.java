@@ -1,7 +1,7 @@
-package br.senai.sc.supertrunfospringnovo.model.DTO;
+package br.senai.sc.supertrunfospringnovo.business.model.DTO;
 
-import br.senai.sc.supertrunfospringnovo.model.enums.Element;
-import br.senai.sc.supertrunfospringnovo.model.enums.Region;
+import br.senai.sc.supertrunfospringnovo.business.model.enums.Region;
+import br.senai.sc.supertrunfospringnovo.business.model.enums.Element;
 import lombok.*;
 
 @Data

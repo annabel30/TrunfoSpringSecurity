@@ -1,6 +1,6 @@
 package br.senai.sc.supertrunfospringnovo.util;
 
-import br.senai.sc.supertrunfospringnovo.repository.PlayerRepository;
+import br.senai.sc.supertrunfospringnovo.business.repository.PlayerRepository;
 import jakarta.annotation.PostConstruct;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Component;

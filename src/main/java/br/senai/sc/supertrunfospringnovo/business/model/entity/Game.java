@@ -1,4 +1,4 @@
-package br.senai.sc.supertrunfospringnovo.model.entity;
+package br.senai.sc.supertrunfospringnovo.business.model.entity;
 
 import lombok.Data;
 

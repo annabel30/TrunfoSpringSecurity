@@ -1,4 +1,4 @@
-package br.senai.sc.supertrunfospringnovo.model.DTO;
+package br.senai.sc.supertrunfospringnovo.business.model.DTO;
 
 import lombok.*;
 

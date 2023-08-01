@@ -1,7 +1,7 @@
 package br.senai.sc.supertrunfospringnovo.service;
 
-import br.senai.sc.supertrunfospringnovo.model.entity.Player;
-import br.senai.sc.supertrunfospringnovo.repository.PlayerRepository;
+import br.senai.sc.supertrunfospringnovo.business.model.entity.Player;
+import br.senai.sc.supertrunfospringnovo.business.repository.PlayerRepository;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
 

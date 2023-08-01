@@ -1,6 +1,6 @@
-package br.senai.sc.supertrunfospringnovo.repository;
+package br.senai.sc.supertrunfospringnovo.business.repository;
 
-import br.senai.sc.supertrunfospringnovo.model.entity.Player;
+import br.senai.sc.supertrunfospringnovo.business.model.entity.Player;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

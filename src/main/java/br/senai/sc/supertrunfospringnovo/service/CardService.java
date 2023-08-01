@@ -1,10 +1,8 @@
 package br.senai.sc.supertrunfospringnovo.service;
 
-import br.senai.sc.supertrunfospringnovo.model.entity.Card;
-import br.senai.sc.supertrunfospringnovo.repository.CardRepository;
+import br.senai.sc.supertrunfospringnovo.business.model.entity.Card;
+import br.senai.sc.supertrunfospringnovo.business.repository.CardRepository;
 import lombok.AllArgsConstructor;
-import lombok.NoArgsConstructor;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;

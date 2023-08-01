@@ -1,7 +1,7 @@
-package br.senai.sc.supertrunfospringnovo.model.entity;
+package br.senai.sc.supertrunfospringnovo.business.model.entity;
 
-import br.senai.sc.supertrunfospringnovo.model.enums.Element;
-import br.senai.sc.supertrunfospringnovo.model.enums.Region;
+import br.senai.sc.supertrunfospringnovo.business.model.enums.Region;
+import br.senai.sc.supertrunfospringnovo.business.model.enums.Element;
 import jakarta.persistence.*;
 import lombok.*;
 

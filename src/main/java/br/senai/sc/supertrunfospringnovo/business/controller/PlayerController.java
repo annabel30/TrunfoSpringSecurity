@@ -1,7 +1,7 @@
-package br.senai.sc.supertrunfospringnovo.controller;
+package br.senai.sc.supertrunfospringnovo.business.controller;
 
-import br.senai.sc.supertrunfospringnovo.model.DTO.PlayerDTO;
-import br.senai.sc.supertrunfospringnovo.model.entity.Player;
+import br.senai.sc.supertrunfospringnovo.business.model.DTO.PlayerDTO;
+import br.senai.sc.supertrunfospringnovo.business.model.entity.Player;
 import br.senai.sc.supertrunfospringnovo.service.PlayerService;
 import lombok.AllArgsConstructor;
 import org.springframework.beans.BeanUtils;

@@ -1,4 +1,4 @@
-package br.senai.sc.supertrunfospringnovo.model.enums;
+package br.senai.sc.supertrunfospringnovo.business.model.enums;
 
 import lombok.AllArgsConstructor;
 

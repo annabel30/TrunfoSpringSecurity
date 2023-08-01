@@ -1,7 +1,7 @@
-package br.senai.sc.supertrunfospringnovo.controller;
+package br.senai.sc.supertrunfospringnovo.business.controller;
 
-import br.senai.sc.supertrunfospringnovo.model.DTO.CardDTO;
-import br.senai.sc.supertrunfospringnovo.model.entity.Card;
+import br.senai.sc.supertrunfospringnovo.business.model.DTO.CardDTO;
+import br.senai.sc.supertrunfospringnovo.business.model.entity.Card;
 import br.senai.sc.supertrunfospringnovo.service.CardService;
 import lombok.AllArgsConstructor;
 import org.springframework.beans.BeanUtils;
