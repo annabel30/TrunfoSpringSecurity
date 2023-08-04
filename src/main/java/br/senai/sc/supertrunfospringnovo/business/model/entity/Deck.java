@@ -1,6 +1,6 @@
 package br.senai.sc.supertrunfospringnovo.business.model.entity;
 
-import br.senai.sc.supertrunfospringnovo.service.CardService;
+import br.senai.sc.supertrunfospringnovo.business.service.CardService;
 import lombok.Data;
 
 import java.util.*;

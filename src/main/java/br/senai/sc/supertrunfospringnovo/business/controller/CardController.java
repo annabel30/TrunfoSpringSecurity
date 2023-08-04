@@ -2,7 +2,7 @@ package br.senai.sc.supertrunfospringnovo.business.controller;
 
 import br.senai.sc.supertrunfospringnovo.business.model.DTO.CardDTO;
 import br.senai.sc.supertrunfospringnovo.business.model.entity.Card;
-import br.senai.sc.supertrunfospringnovo.service.CardService;
+import br.senai.sc.supertrunfospringnovo.business.service.CardService;
 import lombok.AllArgsConstructor;
 import org.springframework.beans.BeanUtils;
 import org.springframework.data.domain.Page;

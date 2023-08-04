@@ -1,4 +1,4 @@
-package br.senai.sc.supertrunfospringnovo.service;
+package br.senai.sc.supertrunfospringnovo.business.service;
 
 import br.senai.sc.supertrunfospringnovo.business.model.entity.Card;
 import br.senai.sc.supertrunfospringnovo.business.repository.CardRepository;

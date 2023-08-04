@@ -1,4 +1,4 @@
-package br.senai.sc.supertrunfospringnovo.service;
+package br.senai.sc.supertrunfospringnovo.business.service;
 
 import br.senai.sc.supertrunfospringnovo.business.model.entity.Player;
 import br.senai.sc.supertrunfospringnovo.business.repository.PlayerRepository;
