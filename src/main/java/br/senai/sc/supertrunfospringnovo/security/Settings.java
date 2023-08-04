@@ -42,7 +42,7 @@ public class Settings {
     public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
         http.authorizeHttpRequests((authorization) ->
                 authorization
-                        .requestMatchers(HttpMethod.POST, "/").permitAll()
+                        .requestMatchers(HttpMethod.POST, "/authentication/").permitAll()
                         .anyRequest().authenticated());
         http.csrf().disable();
         http.cors(cors -> corsConfigurationSource());

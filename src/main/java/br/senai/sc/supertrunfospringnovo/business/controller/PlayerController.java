@@ -38,6 +38,7 @@ public class PlayerController {
 
     @GetMapping("/name/{namePlayer}")
     public ResponseEntity<Player> searchByName(@PathVariable String namePlayer){
+        System.out.println("controller");
         Integer idPlayer = 0;
         List<Player> list = playerService.readAll();
         for (Player player : list){
@@ -47,19 +48,6 @@ public class PlayerController {
         }
         return ResponseEntity.ok(playerService.readSpecific(idPlayer));
     }
-
-//    @GetMapping("login/{namePlayer}/{password}")
-//    public ResponseEntity<Player> verifyLogin(@PathVariable String namePlayer, @PathVariable String password){
-//        List<Player> list = playerService.readAll();
-//        for (Player player : list){
-//            if (player.getName().equals(namePlayer)){
-//                if (player.getPassword().equals(password)){
-//                    return ResponseEntity.ok(player);
-//                }
-//            }
-//        }
-//        throw new RuntimeException();
-//    }
 
     @PutMapping("/edit/{idPlayer}")
     public ResponseEntity<Player> edit(@PathVariable Integer idPlayer, @RequestBody PlayerDTO playerDTO){

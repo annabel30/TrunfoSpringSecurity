@@ -23,6 +23,7 @@ public class PlayerService {
     }
 
     public Player readSpecific(Integer idPlayer){
+        System.out.println("service");
         Optional<Player> optionalPlayer = playerRepository.findById(idPlayer);
         if (optionalPlayer.isPresent()){
             return optionalPlayer.get();
