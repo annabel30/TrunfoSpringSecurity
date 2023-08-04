@@ -22,7 +22,7 @@ public class AuthenticationController {
     @Autowired
     private AuthenticationManager authenticationManager;
 
-    @PostMapping("/login")
+    @PostMapping("/")
     public ResponseEntity<?> login(@RequestBody
                                        Login login, HttpServletRequest request, HttpServletResponse response){
         SecurityContextRepository securityContextRepository = new HttpSessionSecurityContextRepository();
