@@ -5,8 +5,8 @@ import br.senai.sc.supertrunfospringnovo.business.model.enums.Element;
 import lombok.*;
 
 @Data
-@AllArgsConstructor
 @NoArgsConstructor
+@AllArgsConstructor
 public class CardDTO {
 
     private String name;

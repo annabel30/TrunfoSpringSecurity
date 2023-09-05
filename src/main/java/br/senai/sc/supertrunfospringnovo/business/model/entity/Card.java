@@ -5,7 +5,6 @@ import br.senai.sc.supertrunfospringnovo.business.model.enums.Element;
 import jakarta.persistence.*;
 import lombok.*;
 
-
 @Data
 @Entity
 public class Card {
@@ -13,17 +12,20 @@ public class Card {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer idCard;
+
     private String name;
     private int atk;
     private int criticalRate;
     private int criticalDamage;
     private int elementalMastery;
     private int energyRecharge;
+    private String image;
+
     @Enumerated(EnumType.STRING)
     private Element element;
+
     @Enumerated(EnumType.STRING)
     private Region region;
-    private String image;
 
     public static boolean compareAttributes(int attribute){
         Card modelCardUser = Deck.getUserDeck().get(0);

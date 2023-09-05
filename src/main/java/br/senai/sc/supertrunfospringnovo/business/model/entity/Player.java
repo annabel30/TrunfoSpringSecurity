@@ -1,31 +1,52 @@
 package br.senai.sc.supertrunfospringnovo.business.model.entity;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import br.senai.sc.supertrunfospringnovo.business.model.enums.Element;
+import br.senai.sc.supertrunfospringnovo.business.model.enums.Region;
+import br.senai.sc.supertrunfospringnovo.business.model.enums.Weapon;
+import br.senai.sc.supertrunfospringnovo.security.model.enums.Profile;
+import jakarta.persistence.*;
+import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.NoArgsConstructor;
+import org.springframework.security.core.GrantedAuthority;
+import org.springframework.security.core.userdetails.UserDetails;
+
+import java.util.Collection;
+import java.util.List;
 
 @Data
 @Entity
-public class Player {
+@NoArgsConstructor
+@AllArgsConstructor
+public class Player implements UserDetails {
 
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer idPlayer;
 
-    private String name;
+    private String username;
+    private String password;
+
     private Integer age;
     private char gender;
-    private String region;
-    private String element;
-    private String weapon;
-    private Integer victories = 0;
-    private Integer defeats = 0;
+    private Region region;
+    private Weapon weapon;
+    private Element element;
 
-    public void setVictories() {
-        this.victories++;
-    }
+    private Integer defeats = 0;
+    private Integer victories = 0;
+
     public void setDefeats() {
         this.defeats++;
     }
+    public void setVictories() {
+        this.victories++;
+    }
+
+    @Enumerated(EnumType.STRING)
+    private List<Profile> authorities;
+    private boolean accountNonExpired;
+    private boolean accountNonLocked;
+    private boolean credentialsNonExpired;
+    private boolean enabled;
 }

@@ -6,21 +6,25 @@ import br.senai.sc.supertrunfospringnovo.business.service.PlayerService;
 import lombok.AllArgsConstructor;
 import org.springframework.beans.BeanUtils;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
 @Controller
+@CrossOrigin
 @AllArgsConstructor
 @RequestMapping("/player")
-@CrossOrigin
 public class PlayerController {
 
     PlayerService playerService;
 
     @PostMapping("/create")
     public ResponseEntity<Player> create(@RequestBody PlayerDTO playerDTO){
+        BCryptPasswordEncoder bcp = new BCryptPasswordEncoder();
+        playerDTO.setPassword(bcp.encode(playerDTO.getPassword()));
+
         Player player = new Player();
         BeanUtils.copyProperties(playerDTO, player);
         return ResponseEntity.ok(playerService.create(player));
@@ -36,13 +40,12 @@ public class PlayerController {
         return ResponseEntity.ok(playerService.readSpecific(idPlayer));
     }
 
-    @GetMapping("/name/{namePlayer}")
-    public ResponseEntity<Player> searchByName(@PathVariable String namePlayer){
-        System.out.println("controller");
+    @GetMapping("/name/{username}")
+    public ResponseEntity<Player> searchByName(@PathVariable String username){
         Integer idPlayer = 0;
         List<Player> list = playerService.readAll();
         for (Player player : list){
-            if (player.getName().equals(namePlayer)){
+            if (player.getUsername().equals(username)){
                 idPlayer = player.getIdPlayer();
             }
         }

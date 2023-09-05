@@ -1,9 +1,6 @@
 package br.senai.sc.supertrunfospringnovo.util;
 
 import br.senai.sc.supertrunfospringnovo.business.model.entity.Player;
-import br.senai.sc.supertrunfospringnovo.business.repository.PlayerRepository;
-import br.senai.sc.supertrunfospringnovo.security.model.User;
-import br.senai.sc.supertrunfospringnovo.security.repository.UserRepository;
 import jakarta.annotation.PostConstruct;
 import lombok.AllArgsConstructor;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
