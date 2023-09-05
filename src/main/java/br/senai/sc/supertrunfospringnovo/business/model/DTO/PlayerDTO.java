@@ -20,8 +20,12 @@ public class PlayerDTO {
 
     private Integer age;
     private char gender;
+
+    @Enumerated(EnumType.STRING)
     private Region region;
+    @Enumerated(EnumType.STRING)
     private Weapon weapon;
+    @Enumerated(EnumType.STRING)
     private Element element;
 
     @Enumerated(EnumType.STRING)

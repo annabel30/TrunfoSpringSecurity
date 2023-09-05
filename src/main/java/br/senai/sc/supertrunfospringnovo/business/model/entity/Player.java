@@ -29,8 +29,12 @@ public class Player implements UserDetails {
 
     private Integer age;
     private char gender;
+
+    @Enumerated(EnumType.STRING)
     private Region region;
+    @Enumerated(EnumType.STRING)
     private Weapon weapon;
+    @Enumerated(EnumType.STRING)
     private Element element;
 
     private Integer defeats = 0;

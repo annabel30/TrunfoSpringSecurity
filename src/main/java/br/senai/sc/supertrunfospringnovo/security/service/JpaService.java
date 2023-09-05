@@ -15,7 +15,6 @@ public class JpaService implements UserDetailsService {
 
     @Override
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
-        return repository.(username);
+        return repository.findByUsername(username);
     }
-
 }
