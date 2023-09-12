@@ -63,9 +63,35 @@ public class DbUtil {
         zhongli.setCriticalDamage(120);
         zhongli.setElementalMastery(70);
         zhongli.setEnergyRecharge(120);
-//        zhongli.setImage();
+        zhongli.setImage("https://d3ugyf2ht6aenh.cloudfront.net/stores/001/167/768/products/chocolate-barra-hersheys-tab-87g-ao-leit1-3628db9f27e63be46815944038711957-1024-1024.jpg");
         zhongli.setElement(Element.Geo);
         zhongli.setRegion(Region.Liyue);
         cardRepository.save(zhongli);
+
+        Card kazuha = new Card();
+
+        kazuha.setName("Kazuha");
+        kazuha.setAtk(1139);
+        kazuha.setCriticalRate(37);
+        kazuha.setCriticalDamage(157);
+        kazuha.setElementalMastery(623);
+        kazuha.setEnergyRecharge(140);
+        kazuha.setImage("https://d3ugyf2ht6aenh.cloudfront.net/stores/001/167/768/products/chocolate-barra-hersheys-tab-87g-ao-leit1-3628db9f27e63be46815944038711957-1024-1024.jpg");
+        kazuha.setElement(Element.Anemo);
+        kazuha.setRegion(Region.Inazuma);
+        cardRepository.save(kazuha);
+
+        Card alhaitham = new Card();
+
+        alhaitham.setName("Alhaitham");
+        alhaitham.setAtk(1570);
+        alhaitham.setCriticalRate(63);
+        alhaitham.setCriticalDamage(172);
+        alhaitham.setElementalMastery(447);
+        alhaitham.setEnergyRecharge(173);
+        alhaitham.setImage("https://d3ugyf2ht6aenh.cloudfront.net/stores/001/167/768/products/chocolate-barra-hersheys-tab-87g-ao-leit1-3628db9f27e63be46815944038711957-1024-1024.jpg");
+        alhaitham.setElement(Element.Dendro);
+        alhaitham.setRegion(Region.Sumeru);
+        cardRepository.save(alhaitham);
     }
 }
