@@ -13,9 +13,9 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @Controller
-@CrossOrigin
 @AllArgsConstructor
 @RequestMapping("/player")
+@CrossOrigin(origins = "http://localhost:3000", allowCredentials = "true")
 public class PlayerController {
 
     PlayerService playerService;
