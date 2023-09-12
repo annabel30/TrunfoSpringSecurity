@@ -1,6 +1,5 @@
 package br.senai.sc.supertrunfospringnovo.security;
 
-import br.senai.sc.supertrunfospringnovo.business.model.entity.Player;
 import br.senai.sc.supertrunfospringnovo.security.model.entity.User;
 import br.senai.sc.supertrunfospringnovo.security.util.CookieUtil;
 import br.senai.sc.supertrunfospringnovo.security.util.JWTUtil;

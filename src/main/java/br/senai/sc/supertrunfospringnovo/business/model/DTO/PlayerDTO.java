@@ -18,6 +18,9 @@ public class PlayerDTO {
     private String username;
     private String password;
 
+    @Enumerated(EnumType.STRING)
+    private List<Profile> authorities;
+
     private Integer age;
     private char gender;
 

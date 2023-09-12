@@ -25,6 +25,10 @@ public class Player {
     private Integer idPlayer;
 
     private String username;
+    private String password;
+
+    @Enumerated(EnumType.STRING)
+    private List<Profile> authorities;
 
     private Integer age;
     private char gender;

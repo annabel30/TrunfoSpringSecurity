@@ -1,6 +1,5 @@
 package br.senai.sc.supertrunfospringnovo.security.util;
 
-import br.senai.sc.supertrunfospringnovo.business.model.entity.Player;
 import br.senai.sc.supertrunfospringnovo.security.CookieNotFoundException;
 import br.senai.sc.supertrunfospringnovo.security.model.entity.User;
 import jakarta.servlet.http.Cookie;

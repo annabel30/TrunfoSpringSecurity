@@ -1,7 +1,8 @@
 package br.senai.sc.supertrunfospringnovo.security.service;
 
+import br.senai.sc.supertrunfospringnovo.business.model.entity.Player;
 import br.senai.sc.supertrunfospringnovo.business.repository.PlayerRepository;
-import br.senai.sc.supertrunfospringnovo.security.repository.UserRepository;
+import br.senai.sc.supertrunfospringnovo.security.model.entity.User;
 import lombok.AllArgsConstructor;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
@@ -12,10 +13,11 @@ import org.springframework.stereotype.Service;
 @AllArgsConstructor
 public class JpaService implements UserDetailsService {
 
-    private UserRepository repository;
+    private final PlayerRepository repository;
 
     @Override
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
-        return repository.findByPlayer_Username(username);
+        Player player = repository.findByUsername(username);
+        return new User(player);
     }
 }

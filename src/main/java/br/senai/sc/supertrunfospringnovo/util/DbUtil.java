@@ -9,20 +9,18 @@ import br.senai.sc.supertrunfospringnovo.business.repository.CardRepository;
 import br.senai.sc.supertrunfospringnovo.business.repository.PlayerRepository;
 import br.senai.sc.supertrunfospringnovo.security.model.entity.User;
 import br.senai.sc.supertrunfospringnovo.security.model.enums.Profile;
-import br.senai.sc.supertrunfospringnovo.security.repository.UserRepository;
 import jakarta.annotation.PostConstruct;
 import lombok.AllArgsConstructor;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Component;
 
-import java.util.ArrayList;
 import java.util.List;
 
 @Component
 @AllArgsConstructor
 public class DbUtil {
 
-    private UserRepository userRepository;
+    private PlayerRepository userRepository;
     private CardRepository cardRepository;
 
     @PostConstruct
@@ -35,40 +33,26 @@ public class DbUtil {
         Player admin = new Player();
 
         admin.setUsername("admin");
+        admin.setPassword(new BCryptPasswordEncoder().encode("123"));
         admin.setAge(100);
         admin.setGender('M');
         admin.setRegion(Region.Fontaine);
         admin.setElement(Element.Hydro);
         admin.setWeapon(Weapon.Catalyst);
-
-        User userAdmin = new User();
-        userAdmin.setPlayer(admin);
-        userAdmin.setAuthorities(List.of(Profile.ADMIN));
-        userAdmin.setEnabled(true);
-        userAdmin.setAccountNonLocked(true);
-        userAdmin.setAccountNonExpired(true);
-        userAdmin.setCredentialsNonExpired(true);
-        userAdmin.setPassword(new BCryptPasswordEncoder().encode("123"));
-        userRepository.save(userAdmin);
+        admin.setAuthorities(List.of(Profile.ADMIN));
+        userRepository.save(admin);
 
         Player player = new Player();
 
         player.setUsername("annabel");
+        player.setPassword(new BCryptPasswordEncoder().encode("123"));
         player.setAge(19);
         player.setGender('F');
         player.setRegion(Region.Sumeru);
         player.setElement(Element.Dendro);
         player.setWeapon(Weapon.Sword);
-
-        User user = new User();
-        user.setPlayer(player);
-        user.setAuthorities(List.of(Profile.PLAYER));
-        user.setEnabled(true);
-        user.setAccountNonLocked(true);
-        user.setAccountNonExpired(true);
-        user.setCredentialsNonExpired(true);
-        user.setPassword(new BCryptPasswordEncoder().encode("123"));
-        userRepository.save(user);
+        player.setAuthorities(List.of(Profile.ADMIN));
+        userRepository.save(player);
 
 //       --------- card ---------
         Card zhongli = new Card();
