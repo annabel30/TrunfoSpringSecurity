@@ -27,7 +27,4 @@ public class PlayerDTO {
     private Weapon weapon;
     @Enumerated(EnumType.STRING)
     private Element element;
-
-    @Enumerated(EnumType.STRING)
-    private List<Profile> authorities;
 }

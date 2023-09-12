@@ -18,14 +18,13 @@ import java.util.List;
 @Entity
 @NoArgsConstructor
 @AllArgsConstructor
-public class Player implements UserDetails {
+public class Player {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer idPlayer;
 
     private String username;
-    private String password;
 
     private Integer age;
     private char gender;
@@ -46,11 +45,4 @@ public class Player implements UserDetails {
     public void setVictories() {
         this.victories++;
     }
-
-    @Enumerated(EnumType.STRING)
-    private List<Profile> authorities;
-    private boolean accountNonExpired;
-    private boolean accountNonLocked;
-    private boolean credentialsNonExpired;
-    private boolean enabled;
 }

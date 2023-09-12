@@ -2,13 +2,14 @@ package br.senai.sc.supertrunfospringnovo.security.util;
 
 import br.senai.sc.supertrunfospringnovo.business.model.entity.Player;
 import br.senai.sc.supertrunfospringnovo.security.CookieNotFoundException;
+import br.senai.sc.supertrunfospringnovo.security.model.entity.User;
 import jakarta.servlet.http.Cookie;
 import jakarta.servlet.http.HttpServletRequest;
 import org.springframework.web.util.WebUtils;
 
 public class CookieUtil {
 
-    public static Cookie generateCookie(Player user) {
+    public static Cookie generateCookie(User user) {
         String token = JWTUtil.generateToken(user);
         Cookie cookie = new Cookie("JWT", token);
         cookie.setPath("/");

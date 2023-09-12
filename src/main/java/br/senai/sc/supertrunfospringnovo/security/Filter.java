@@ -1,6 +1,7 @@
 package br.senai.sc.supertrunfospringnovo.security;
 
 import br.senai.sc.supertrunfospringnovo.business.model.entity.Player;
+import br.senai.sc.supertrunfospringnovo.security.model.entity.User;
 import br.senai.sc.supertrunfospringnovo.security.util.CookieUtil;
 import br.senai.sc.supertrunfospringnovo.security.util.JWTUtil;
 import com.auth0.jwt.exceptions.JWTDecodeException;
@@ -27,7 +28,7 @@ public class Filter extends OncePerRequestFilter {
             try {
                 String token = CookieUtil.getToken(request);
                 System.out.println(token);
-                Player user = JWTUtil.getUser(token);
+                User user = JWTUtil.getUser(token);
                 System.out.println(user);
                 response.addCookie(CookieUtil.generateCookie(user));
 

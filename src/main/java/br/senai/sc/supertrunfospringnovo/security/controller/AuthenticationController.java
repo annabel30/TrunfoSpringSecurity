@@ -1,7 +1,7 @@
 package br.senai.sc.supertrunfospringnovo.security.controller;
 
-import br.senai.sc.supertrunfospringnovo.business.model.entity.Player;
 import br.senai.sc.supertrunfospringnovo.security.model.entity.Login;
+import br.senai.sc.supertrunfospringnovo.security.model.entity.User;
 import br.senai.sc.supertrunfospringnovo.security.util.CookieUtil;
 import jakarta.servlet.http.Cookie;
 import jakarta.servlet.http.HttpServletRequest;
@@ -41,7 +41,7 @@ public class AuthenticationController {
 
         if (authentication.isAuthenticated()){
 
-            Player user = (Player) authentication.getPrincipal();
+            User user = (User) authentication.getPrincipal();
             Cookie cookie = CookieUtil.generateCookie(user);
             response.addCookie(cookie);
 
