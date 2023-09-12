@@ -23,7 +23,7 @@ public class Filter extends OncePerRequestFilter {
             HttpServletResponse response,
             FilterChain filterChain) throws ServletException, IOException {
 
-        if (privateRoute(request.getRequestURI())) {
+        if (!privateRoute(request.getRequestURI())) {
             try {
                 String token = CookieUtil.getToken(request);
                 System.out.println(token);
@@ -46,6 +46,6 @@ public class Filter extends OncePerRequestFilter {
     }
 
     private boolean privateRoute(String url) {
-        return url.startsWith("/test/auth");
+        return url.startsWith("/authentication");
     }
 }
