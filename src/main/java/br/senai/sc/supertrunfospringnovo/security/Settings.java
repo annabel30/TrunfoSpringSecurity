@@ -15,13 +15,18 @@ import org.springframework.security.config.annotation.web.configuration.EnableWe
 import org.springframework.security.config.annotation.web.configurers.AbstractHttpConfigurer;
 import org.springframework.security.config.annotation.web.configurers.HeadersConfigurer;
 import org.springframework.security.config.http.SessionCreationPolicy;
+import org.springframework.security.core.userdetails.UserDetails;
+import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
+import org.springframework.security.crypto.factory.PasswordEncoderFactories;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.web.SecurityFilterChain;
 import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
 import org.springframework.web.cors.CorsConfiguration;
 import org.springframework.web.cors.CorsConfigurationSource;
 import org.springframework.web.cors.UrlBasedCorsConfigurationSource;
 
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
@@ -65,4 +70,25 @@ public class Settings {
 //        source.registerCorsConfiguration("/**", configuration);
 //        return source;
 //    }
+
+//    @Bean
+//    public UserDetailsService userDetailsService(){
+//        List<UserDetails> users = new ArrayList<>();
+//        PasswordEncoder encoder = PasswordEncoderFactories
+//                .createDelegatingPasswordEncoder();
+//        UserDetails user1 =
+//                User.builder()
+//                        .username("blade")
+//                        .password(encoder.encode("123"))
+//                        .build();
+//        users.add(user1);
+//        UserDetails user2 =
+//                User.builder()
+//                        .username("luocha")
+//                        .password(encoder.encode("123"))
+//                        .build();
+//        users.add(user2);
+//        return new InMemoryUserDetailsManager(users);
+//    }
+
 }
