@@ -11,7 +11,9 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.Authentication;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.web.context.HttpSessionSecurityContextRepository;
+import org.springframework.security.web.context.SecurityContextHolderFilter;
 import org.springframework.security.web.context.SecurityContextRepository;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.CrossOrigin;
@@ -29,21 +31,27 @@ public class AuthenticationController {
 
     @PostMapping
     public ResponseEntity<?> login(
-            @RequestBody Login login,
-            HttpServletRequest request,
-            HttpServletResponse response){
+            @RequestBody Login login
+//            ,HttpServletRequest request,
+//            HttpServletResponse response
+    ){
 
-        SecurityContextRepository securityContextRepository = new HttpSessionSecurityContextRepository();
+//        SecurityContextRepository securityContextRepository = new HttpSessionSecurityContextRepository();
         UsernamePasswordAuthenticationToken token =
-                new UsernamePasswordAuthenticationToken(login.getUsername(), login.getPassword());
+                new UsernamePasswordAuthenticationToken(
+                        login.getUsername(),
+                        login.getPassword()
+                );
 
         Authentication authentication = authenticationManager.authenticate(token);
 
         if (authentication.isAuthenticated()){
 
-            Player user = (Player) authentication.getPrincipal();
-            Cookie cookie = CookieUtil.generateCookie(user);
-            response.addCookie(cookie);
+            SecurityContextHolder.getContext().setAuthentication(authentication);
+
+//            Player user = (Player) authentication.getPrincipal();
+//            Cookie cookie = CookieUtil.generateCookie(user);
+//            response.addCookie(cookie);
 
             return ResponseEntity.ok(authentication.getPrincipal());
         }

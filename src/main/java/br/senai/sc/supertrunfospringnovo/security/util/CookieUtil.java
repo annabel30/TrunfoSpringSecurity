@@ -11,6 +11,7 @@ public class CookieUtil {
     public static Cookie generateCookie(Player user) {
         String token = JWTUtil.generateToken(user);
         Cookie cookie = new Cookie("JWT", token);
+//        vísivel para todas as requisições
         cookie.setPath("/");
         cookie.setMaxAge(1800);
         return cookie;

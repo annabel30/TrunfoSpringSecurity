@@ -37,9 +37,9 @@ public class Filter extends OncePerRequestFilter {
             } catch (JWTDecodeException e) {
                 System.out.println("O token é inválido!");
                 response.setStatus(HttpServletResponse.SC_UNAUTHORIZED);
-                return;
             } catch (CookieNotFoundException e) {
                 System.out.println(e.getMessage());
+                response.setStatus(HttpServletResponse.SC_UNAUTHORIZED);
             }
         }
         filterChain.doFilter(request, response);

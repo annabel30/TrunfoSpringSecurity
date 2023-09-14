@@ -50,8 +50,14 @@ public class Settings {
 
     @Bean
     public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
+        http.authorizeHttpRequests((authorization) ->
+                authorization
+                        .requestMatchers(HttpMethod.POST, "/card/create").hasAnyAuthority("ADMIN")
+                        .anyRequest().permitAll()
+        );
+//        http.formLogin(httpSecurityFormLoginConfigurer -> httpSecurityFormLoginConfigurer.loginPage("/authentication").permitAll());
         http.sessionManagement(session -> session.sessionCreationPolicy(SessionCreationPolicy.STATELESS));
-        http.addFilterBefore(new Filter(), UsernamePasswordAuthenticationFilter.class);
+        http.addFilterBefore(new Filter(), UsernamePasswordAuthenticationFilter.class); // no filter ele informa pra api que tem um cookie
         http.headers(httpSecurityHeadersConfigurer ->
                 httpSecurityHeadersConfigurer.frameOptions(HeadersConfigurer.FrameOptionsConfig::disable));
         http.csrf(AbstractHttpConfigurer::disable);
